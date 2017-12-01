@@ -1,7 +1,7 @@
 {
   "name": "x-blog-front",
   "description": "",
-  "author": "XiYunFeng <yunfeng.xi@qq.com>",
+  "author": "louyue.xyf",
   "private": true,
   "scripts": {
     "dev": "node server",

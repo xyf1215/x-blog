@@ -8,7 +8,7 @@
     "build": "node build/build.prod.js",
     "server": "node build/start-server.js"
   },
-  "author": "",
+  "author": "louyue.xyf",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
