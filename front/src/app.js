@@ -6,7 +6,7 @@ import {sync} from 'vuex-router-sync'
 import titleMixin from './util/title'
 import * as filters from './util/filters'
 import '@/shared'
-import '@/assets/styles/iconfont.css'
+import '@/assets/styles/main.less'
 
 // mixin for handling title
 Vue.mixin(titleMixin)

@@ -1,5 +1,5 @@
 <template>
-  <div class="footbar text-center">
+  <div class="footer text-center">
     <span>©&nbsp;2017</span>
     <span>总访问人数：1234</span>
   </div>
@@ -8,7 +8,7 @@
 <script>
 
 export default {
-  name: 'FootBar',
+  name: 'Footer',
   data: () => ({
     loading: true
   }),
@@ -18,8 +18,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .footbar {
-    position: absolute;
+  .footer {
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;

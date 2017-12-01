@@ -2,11 +2,10 @@
   <div class="home">
    <p class="text-center global-title">rhett's blog</p>
    <p class="text-center sub-title">coder & fe</p>
-   <ul class="text-center menu-list p">
+   <ul class="text-center list-unstyled list-inline menu-list p">
      <li><router-link to="/article">文章</router-link></li>
      <li><router-link to="/category">分类</router-link></li>
      <li><router-link to="/archive">归档</router-link></li>
-     <li><router-link to="/bbs">留言板</router-link></li>
      <li><router-link to="/about">关于</router-link></li>
      <li><a href="https://github.com/xyf1215/">github</a></li>
    </ul>
@@ -59,10 +58,7 @@ export default {
  }
 
  .menu-list {
-   padding-left: 0;
    li {
-     display: inline-block;
-     list-style: none;
      font-size: 14px;
      margin: 0 5px;
    }
