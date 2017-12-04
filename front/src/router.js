@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const Index = () => import('@/views/Index.vue')
 const ArticleList = () => import('@/views/article/ArticleList.vue')
 const CategoryList = () => import('@/views/category/CategoryList.vue')
 const ArchiveList = () => import('@/views/archive/ArchiveList.vue')
@@ -18,12 +19,37 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({y: 0}),
     routes: [
-      {path: '/article', component: ArticleList},
-      {path: '/category', component: CategoryList},
-      {path: '/archive', component: ArchiveList},
-      {path: '/about', component: AboutIndex},
+      // {path: '/article', component: ArticleList},
       // {path: '/test/:id', component: TestView},
-      {path: '/', component: Home}
+      {
+        path: '/',
+        component: Index,
+        children: [
+          {
+            path: 'article',
+            component: ArticleList
+          },
+          {
+            path: '/category',
+            component: CategoryList
+          },
+          {
+            path: '/archive',
+            component: ArchiveList
+          },
+          {
+            path: '/about',
+            component: AboutIndex
+          },
+          {
+            path: '',
+            component: Home,
+            meta: {
+              sidebar: false
+            }
+          }
+        ]
+      }
     ]
   })
 }

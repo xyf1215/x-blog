@@ -1,13 +1,10 @@
 <template>
-  <wrap>
-    <div class="category-list">
-      建设中...
-    </div>
-  </wrap>
+  <div class="category-list">
+    建设中...
+  </div>
 </template>
 
 <script>
-import Wrap from '@/views/Wrap.vue'
 export default {
   name: 'CategoryList',
 
@@ -20,10 +17,6 @@ export default {
   }),
 
   methods: {
-  },
-
-  components: {
-    Wrap
   }
 }
 </script>

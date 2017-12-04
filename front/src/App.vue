@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="particles-js"></div>
-    <transition name="fade" mode="out-in">
+    <transition>
       <router-view></router-view>
     </transition>
   </div>

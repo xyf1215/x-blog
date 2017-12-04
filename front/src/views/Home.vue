@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import {test} from '@store/types'
+// import {test} from '@store/types'
 import {mapState} from 'vuex'
 
 export default {
@@ -26,8 +26,7 @@ export default {
   data: () => ({
     loading: true
   }),
-
-  asyncData: ({store, route}) => store.dispatch(test.A.FETCH_ITEMS),
+  // asyncData: ({store, route}) => store.dispatch(test.A.FETCH_ITEMS),
 
   computed: {
     ...mapState({

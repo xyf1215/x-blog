@@ -1,13 +1,10 @@
 <template>
-  <wrap>
-    <div class="about-index">
-      建设中...
-    </div>
-  </wrap>
+  <div class="about-index">
+    建设中...
+  </div>
 </template>
 
 <script>
-import Wrap from '@/views/Wrap.vue'
 export default {
   name: 'AboutIndex',
 
@@ -20,10 +17,6 @@ export default {
   }),
 
   methods: {
-  },
-
-  components: {
-    Wrap
   }
 }
 </script>
