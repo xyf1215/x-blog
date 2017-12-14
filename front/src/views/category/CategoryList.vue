@@ -1,6 +1,6 @@
 <template>
   <div class="category-list">
-    建设中...
+    建设中...2
   </div>
 </template>
 

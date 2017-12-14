@@ -7,7 +7,7 @@ const webpack = require('webpack')
 const webpackConfig = require('./webpack.dev.conf')
 const config = require('./config')
 const exec = require('child_process').exec
-const server = null
+let server = null
 
 function startServer() {
   if (server) {

@@ -3,7 +3,7 @@
     <div v-show="hasSidebar" class="sidebar-wrap">
       <sidebar></sidebar>
     </div>
-    <div class="content" :class="{'show-header': showHeader, 'show-footer': showFooter}">
+    <div class="content">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>

@@ -4,6 +4,8 @@ const base = require('./webpack.base.config')
 const nodeExternals = require('webpack-node-externals')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',

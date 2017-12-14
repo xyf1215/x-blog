@@ -1,6 +1,6 @@
 <template>
   <div class="about-index">
-    建设中...
+    建设中...5
   </div>
 </template>
 

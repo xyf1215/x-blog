@@ -1,4 +1,5 @@
 import {createApp} from './app'
+import {appInfo} from '@/store/types'
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -9,9 +10,9 @@ const isDev = process.env.NODE_ENV !== 'production'
 // return a Promise that resolves to the app instance.
 export default context => {
   return new Promise((resolve, reject) => {
+    console.log('enter server')
     const s = isDev && Date.now()
     const {app, router, store} = createApp()
-
     const {url} = context
     const {fullPath} = router.resolve(url).route
 
@@ -29,13 +30,18 @@ export default context => {
       if (!matchedComponents.length) {
         return reject({code: 404})
       }
+      // server init
+      matchedComponents.unshift({
+        asyncData: config => store.dispatch(appInfo.A.SERVER_INIT, config)
+      })
       // Call fetchData hooks on components matched by the route.
       // A preFetch hook dispatches a store action and returns a Promise,
       // which is resolved when the action is complete and store state has been
       // updated.
       Promise.all(matchedComponents.map(({asyncData}) => asyncData && asyncData({
         store,
-        route: router.currentRoute
+        route: router.currentRoute,
+        isServerRendered: true
       }))).then(() => {
         isDev && console.log(`data pre-fetch: ${Date.now() - s}ms`)
         // After all preFetch hooks are resolved, our store is now

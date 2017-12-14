@@ -1,6 +1,6 @@
 <template>
   <div class="archive-list">
-    <p>建设中...</p>
+    <p>建设中...4</p>
   </div>
 </template>
 

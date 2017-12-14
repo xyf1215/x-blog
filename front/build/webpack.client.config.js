@@ -3,6 +3,8 @@ const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const config = merge(base, {
   entry: {
     app: './src/entry-client.js'

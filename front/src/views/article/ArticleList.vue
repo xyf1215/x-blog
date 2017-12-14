@@ -1,20 +1,35 @@
 <template>
   <div class="article-list">
-    建设中...
+    <div v-for="article in articleList" :key="article._id">
+      <a>
+        {{article.title}}
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
+import {articleList} from '@/store/types'
+import {mapState} from 'vuex'
+
 export default {
   name: 'ArticleList',
 
   title () {
-    return ''
+    return '文章列表'
   },
 
   data: () => ({
     loading: true
   }),
+
+  computed: {
+    ...mapState({
+      articleList: state => state.articleList.articleList
+    })
+  },
+
+  asyncData: ({store, route}) => store.dispatch(articleList.A.FETCH_LIST),
 
   methods: {
   }
@@ -22,7 +37,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
- .article-list {
-  
- }
+
 </style>

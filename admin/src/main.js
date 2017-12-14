@@ -3,6 +3,7 @@ import App from './App'
 import store from '@store'
 import router from './router.js'
 import {sync} from 'vuex-router-sync'
+import '@/assets/styles/main.less'
 
 Vue.config.productionTip = false
 

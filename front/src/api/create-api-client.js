@@ -1,7 +1,9 @@
-import Firebase from 'firebase/app'
-import 'firebase/database'
+import axios from 'axios'
+import {config, initAxios} from './config'
 
-export function createAPI ({ config, version }) {
-  Firebase.initializeApp(config)
-  return Firebase.database().ref(version)
-}
+export const serv = axios.create({
+  ...config,
+  baseURL: '/api'
+})
+
+initAxios(serv)

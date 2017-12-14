@@ -50,7 +50,7 @@ router.onReady(() => {
     }
 
     bar.start()
-    Promise.all(asyncDataHooks.map(hook => hook({store, route: to})))
+    Promise.all(asyncDataHooks.map(hook => hook({store, route: to, isServerRendered: false})))
       .then(() => {
         bar.finish()
         next()

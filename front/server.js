@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
 const express = require('express')
+const proxy = require('http-proxy-middleware')
+const proxyConfig = require('./build/proxy.config')
 const favicon = require('serve-favicon')
 const compression = require('compression')
 const microcache = require('route-cache')
@@ -15,6 +17,12 @@ const serverInfo =
   `vue-server-renderer/${require('vue-server-renderer/package.json').version}`
 
 const app = express()
+
+if (!isProd && proxyConfig) {
+  Object.keys(proxyConfig).forEach(url => {
+    app.use(url, proxy(proxyConfig[url]))
+  })
+}
 
 function createRenderer (bundle, options) {
   // https://github.com/vuejs/vue/blob/dev/packages/vue-server-renderer/README.md#why-use-bundlerenderer

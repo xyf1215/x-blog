@@ -2,7 +2,7 @@ export default () => async (ctx, next) => {
   const wrapInfo = {
     code: 200,
     message: 'SUCCESS',
-    result: null
+    data: null
   }
   try {
     await next()
@@ -16,6 +16,6 @@ export default () => async (ctx, next) => {
       wrapInfo.code = 500
     }
   }
-  wrapInfo.result = ctx.body
+  wrapInfo.data = ctx.body
   ctx.body = wrapInfo
 }
