@@ -1,4 +1,4 @@
-function getTitle (vm) {
+const getTitle = vm => {
   const {title} = vm.$options
   if (title) {
     return typeof title === 'function'
@@ -19,9 +19,8 @@ const serverTitleMixin = {
 const clientTitleMixin = {
   mounted () {
     const title = getTitle(this)
-    if (title) {
-      document.title = `rhett's blog | ${title}`
-    }
+    const dTitle = `rhett's blog`
+    document.title = title ? `${dTitle} | ${title}` : dTitle
   }
 }
 

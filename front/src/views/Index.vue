@@ -14,9 +14,9 @@
 <script>
 import Sidebar from '@/views/Sidebar.vue'
 export default {
-  title () {
-    return '建设中...'
-  },
+  // title () {
+  //   return '建设中...'
+  // },
   computed: {
     hasSidebar() {
       return this.$route.meta.sidebar !== false

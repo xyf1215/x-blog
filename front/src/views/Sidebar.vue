@@ -20,9 +20,9 @@
 
 <script>
 export default {
-  title () {
-    return '建设中...'
-  },
+  // title () {
+  //   return '建设中...'
+  // },
   methods: {
     comdify(value = '') {
       return value.replace(/^(\d+)((\.\d+)?)$/, (s, s1, s2) => s1.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,') + s2)
