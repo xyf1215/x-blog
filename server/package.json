@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node build/build.dev.js",
     "build": "node build/build.prod.js",
-    "server": "node build/start-server.js"
+    "start": "node build/start-server.js"
   },
   "author": "louyue.xyf",
   "license": "ISC",
