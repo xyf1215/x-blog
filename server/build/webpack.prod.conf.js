@@ -2,6 +2,7 @@ const path = require('path')
 const merge = require('webpack-merge')
 const base = require('./webpack.base.conf')
 const webpack = require('webpack')
+const UglifyEsPlugin = require('uglify-es-webpack-plugin')
 const config = require('./config')
 
 module.exports = merge(base, {
@@ -26,6 +27,11 @@ module.exports = merge(base, {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
+      }
+    }),
+    new UglifyEsPlugin({
+      compress: {
+        warnings: false
       }
     })
   ]
