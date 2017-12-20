@@ -27,9 +27,6 @@ module.exports = merge(base, {
       'process.env': {
         NODE_ENV: '"production"'
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false }
     })
   ]
 })
