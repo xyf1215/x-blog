@@ -4,12 +4,7 @@ export const appInfo = createModule('appInfo', {
   A: ['SERVER_INIT']
 })
 
-export const test = createModule('test', {
-  A: ['FETCH_ITEMS'],
-  M: ['UPDATE_ITEMS']
-})
-
-export const articleList = createModule('articleList', {
-  A: ['FETCH_LIST'],
-  M: ['UPDATE_LIST']
+export const article = createModule('article', {
+  A: ['FETCH_LIST', 'FETCH_ITEM'],
+  M: ['UPDATE_LIST', 'UPDATE_PAGE', 'UPDATE_ITEM']
 })

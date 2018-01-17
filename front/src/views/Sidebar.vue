@@ -12,7 +12,7 @@
       </ul>
     </div>
     <div class="footer text-center">
-      <div>©&nbsp;2017</div>
+      <div>©&nbsp;2017-{{curYear}}</div>
       <div>总访问人数：{{comdify('9999')}}</div>
     </div>
   </div>
@@ -23,6 +23,11 @@ export default {
   // title () {
   //   return '建设中...'
   // },
+  data() {
+    return {
+      curYear: new Date().getFullYear()
+    }
+  },
   methods: {
     comdify(value = '') {
       return value.replace(/^(\d+)((\.\d+)?)$/, (s, s1, s2) => s1.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,') + s2)

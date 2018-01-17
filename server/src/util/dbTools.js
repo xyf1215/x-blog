@@ -42,6 +42,7 @@ export const pagelize = (queryInfo, resultQuery, countQuery) => new Promise(asyn
     if ($page) {
       resp.size = queryInfo.size
       resp.num = queryInfo.num
+      resp.totalPage = Math.ceil(count / queryInfo.size)
     }
     if ($order) {
       resp.orderBy = queryInfo.orderBy

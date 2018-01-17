@@ -7,11 +7,11 @@
   </div>
 </template>
 <script>
-import particlesConfig from '@/util/particlesConfig'
+// import particlesConfig from '@/util/particlesConfig'
 
 export default {
   mounted() {
-    window.particlesJS('particles-js', particlesConfig)
+    // window.particlesJS('particles-js', particlesConfig)
   }
 }
 </script>

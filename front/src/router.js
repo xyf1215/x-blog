@@ -3,15 +3,17 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const Index = () => import('@/views/Index.vue')
-const ArticleList = () => import('@/views/article/ArticleList.vue')
-const CategoryList = () => import('@/views/category/CategoryList.vue')
-const ArchiveList = () => import('@/views/archive/ArchiveList.vue')
-const AboutIndex = () => import('@/views/about/AboutIndex.vue')
+const Index = () => import(/* webpackChunkName: "index" */ '@/views/Index.vue')
+const Home = () => import(/* webpackChunkName: "index" */ '@/views/Home.vue')
 
-// const TestList = () => import('./views/TestList.vue')
-// const TestView = () => import('./views/TestView.vue')
-const Home = () => import('@/views/Home.vue')
+const ArticleList = () => import(/* webpackChunkName: "article" */ '@/views/article/ArticleList.vue')
+const ArticleView = () => import(/* webpackChunkName: "article" */ '@/views/article/ArticleView.vue')
+
+const CategoryList = () => import(/* webpackChunkName: "category" */ '@/views/category/CategoryList.vue')
+
+const ArchiveList = () => import(/* webpackChunkName: "archive" */ '@/views/archive/ArchiveList.vue')
+
+const AboutIndex = () => import(/* webpackChunkName: "about" */ '@/views/about/AboutIndex.vue')
 
 export function createRouter () {
   return new Router({
@@ -19,8 +21,6 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({y: 0}),
     routes: [
-      // {path: '/article', component: ArticleList},
-      // {path: '/test/:id', component: TestView},
       {
         path: '/',
         component: Index,
@@ -28,6 +28,10 @@ export function createRouter () {
           {
             path: 'article',
             component: ArticleList
+          },
+          {
+            path: '/article/:id',
+            component: ArticleView
           },
           {
             path: '/category',

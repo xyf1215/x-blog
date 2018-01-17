@@ -3,19 +3,21 @@ import moment from 'moment'
 import {register} from '@/util/dbTools'
 
 const schema = register(new mongoose.Schema({
-  title: {
+  userName: {
     type: String,
     required: true
   },
-  body: {
+  password: {
     type: String,
+    min: 32,
+    max: 32,
+    lowercase: true,
     required: true
   },
-  time: {
-    type: Date,
-    default: Date.now
+  lastLoginTime: {
+    type: Date
   },
-  publish: {
+  active: {
     type: Boolean,
     default: false
   }
@@ -25,8 +27,8 @@ const schema = register(new mongoose.Schema({
   }
 }))
 
-schema.virtual('timeStr').get(function() {
-  return moment(this.time).format('YYYY-MM-DD HH:mm:SS')
+schema.virtual('lastLoginTimeStr').get(function() {
+  return this.lastLoginTime ? moment(this.lastLoginTime).format('YYYY-MM-DD HH:mm:SS') : ''
 })
 
-export default mongoose.model('article', schema, 'article')
+export default mongoose.model('user', schema, 'user')

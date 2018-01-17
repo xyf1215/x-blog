@@ -1,9 +1,7 @@
 import appInfo from './appInfo'
-import test from './test'
-import articleList from './articleList'
+import article from './article'
 
 export default {
   appInfo,
-  test,
-  articleList
+  article
 }
