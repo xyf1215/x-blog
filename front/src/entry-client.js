@@ -61,3 +61,8 @@ router.onReady(() => {
   // actually mount to DOM
   app.$mount('#app')
 })
+
+// service worker
+if (window.location.protocol === 'https:' && navigator.serviceWorker) {
+  navigator.serviceWorker.register('/service-worker.js')
+}
